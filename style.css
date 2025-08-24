@@ -1321,9 +1321,7 @@ header {
 
 .testimonials-scroll {
   display: flex;
-  /* CHANGE START: Adjusted gap for better spacing */
   gap: var(--space-24);
-  /* CHANGE END */
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: var(--space-24) 0;
@@ -1337,11 +1335,9 @@ header {
 
 .testimonial-card {
   background: var(--color-surface);
-  /* CHANGE START: Adjusted padding and width for a more natural fit */
   padding: var(--space-24);
   min-width: 320px;
   max-width: 420px;
-  /* CHANGE END */
   border-radius: var(--radius-lg);
   border-left: 4px solid var(--color-primary);
   box-shadow: var(--shadow-md);
@@ -1397,7 +1393,6 @@ header {
 }
 
 /* Services Section */
-/* CHANGE START: Added styles for the new scrollable services container */
 .services-container {
     position: relative;
     margin-top: calc(var(--space-32) * 2);
@@ -1428,7 +1423,6 @@ header {
     gap: var(--space-16);
     margin-top: var(--space-32);
 }
-/* CHANGE END */
 
 .service-item {
   background: var(--color-surface);
