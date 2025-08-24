@@ -29,9 +29,8 @@ class AzlanPortfolio {
     // Testimonials navigation
     this.setupTestimonialsNavigation();
     
-    // CHANGE START: Added call for services navigation
+    // Services navigation
     this.setupServicesNavigation();
-    // CHANGE END
   }
 
   // Smooth scrolling setup
@@ -99,9 +98,7 @@ class AzlanPortfolio {
     // Handle arrow keys for horizontal scrolling when focused on scroll containers
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
       const focusedElement = document.activeElement;
-      // CHANGE START: Added .services-scroll to the selector
       const scrollContainer = focusedElement.closest('.portfolio-scroll, .testimonials-scroll, .services-scroll');
-      // CHANGE END
       
       if (scrollContainer) {
         event.preventDefault();
@@ -119,9 +116,7 @@ class AzlanPortfolio {
   // Setup horizontal scrolling functionality
   setupHorizontalScrolling() {
     // Add touch/mouse drag scrolling for better mobile experience
-    // CHANGE START: Added .services-scroll to the selector
     this.addDragScrolling('.portfolio-scroll, .testimonials-scroll, .services-scroll');
-    // CHANGE END
     
     // Add scroll indicators
     this.addScrollIndicators();
@@ -168,9 +163,7 @@ class AzlanPortfolio {
 
   // Add scroll indicators
   addScrollIndicators() {
-    // CHANGE START: Added .services-scroll to the selector
     const scrollContainers = document.querySelectorAll('.portfolio-scroll, .testimonials-scroll, .services-scroll');
-    // CHANGE END
     
     scrollContainers.forEach(container => {
       const updateIndicators = () => {
@@ -263,7 +256,7 @@ class AzlanPortfolio {
     updateNavButtons(); // Initial call
   }
 
-  // CHANGE START: Added navigation function for the new services section
+  // Setup services navigation
   setupServicesNavigation() {
     const servicesContainer = document.querySelector('.services-scroll');
     const prevBtn = document.querySelector('.services-nav .nav-prev');
@@ -302,7 +295,6 @@ class AzlanPortfolio {
     servicesContainer.addEventListener('scroll', updateNavButtons);
     updateNavButtons(); // Initial call
   }
-  // CHANGE END
 
   // Utility method for debouncing
   debounce(func, wait) {
@@ -342,9 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // Add keyboard navigation hints
-  // CHANGE START: Added .services-scroll to the selector
   const scrollContainers = document.querySelectorAll('.portfolio-scroll, .testimonials-scroll, .services-scroll');
-  // CHANGE END
   scrollContainers.forEach(container => {
     container.setAttribute('tabindex', '0');
     container.setAttribute('role', 'region');
